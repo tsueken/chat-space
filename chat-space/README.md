@@ -25,7 +25,7 @@ Things you may want to cover:
 - has_many :messages
 - has_many :groups, through:  :users_groups
 - has_many :users_groups
-###AddIndexToUser
+### AddIndexToUser
 - add_index :users, :name
 - add_index :users, :email, unique: true
 
@@ -40,7 +40,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :group
-###AddIndexToMessage
+### AddIndexToMessage
 - add_index :messages, [:text, :image]
 
 ## groupsテーブル
@@ -51,7 +51,6 @@ Things you may want to cover:
 - has_many :users,   through:  :users_groups
 - has_many :messages  
 - has_many :users_groups 
-###AddIndexToGroup
 
 
 ## groups_usersテーブル
