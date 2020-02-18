@@ -21,41 +21,37 @@ Things you may want to cover:
 |email|string|null: false|
 |password|string|null: false|
 |Password_confirmation|string|null: false|
-|tweet_id|integer|null: false, foreign_key: true|
-|groups_users_id|integer|null: false, foreign_key: true|
 ### Association
-- has_many :tweets
+- has_many :messages
 - has_many :groups, through:  :users_groups
+- has_many :users_groups
 ###AddIndexToUser
 - add_index :users, :name
 - add_index :users, :email, unique: true
 
 
-## tweetsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
-|text|text|null: false|
-|image|string|null: false|
+|text|text|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
-###AddIndexToTweet
-- add_index :tweets, [:text, :image]
+###AddIndexToMessage
+- add_index :messages, [:text, :image]
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|text|null: false|
-|tweet_id|integer|null: false, foreign_key: true|
-|groups_users_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :users,   through:  :users_groups
-- has_many :tweets  
+- has_many :messages  
+- has_many :users_groups 
 ###AddIndexToGroup
-- add_index :groups, :text
 
 
 ## groups_usersテーブル
