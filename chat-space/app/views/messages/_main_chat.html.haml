@@ -1,0 +1,37 @@
+.main-chat
+  .main-chat__header
+    .main-chat__header__left
+      .main-chat__header__left--chat-title
+        test
+      .main-chat__header__left--chat-member
+        masa
+    = link_to "#", class: "main-chat__header__right" do
+      Edit
+  
+  %ul.main-chat__contents<
+    %li.main-chat__contents__content<
+      .main-chat__contents__content__top
+        .main-chat__contents__content__top--user-name
+          masa
+        .main-chat__contents__content__top--date
+          2019/11/20(wed) 17:43:01
+      .main-chat__contents__content__message
+        おはよう！
+    %li.main-chat__contents__content<
+      .main-chat__contents__content__top
+        .main-chat__contents__content__top--user-name
+          masa
+        .main-chat__contents__content__top--date
+          2019/11/20(wed) 17:43:34
+      .main-chat__contents__content__message
+        今日は夜から雨
+
+  .main-chat__footer
+    .main-chat__footer__form-box
+      = form_tag  url: "#", class: "main-chat__footer__form-box__input" do
+        = text_field_tag :text, placeholder="type a message", class: "main-chat__footer__form-box__input--message" 
+        = label_tag :image, class: "main-chat__footer__form-box__input__img-btn" do
+          %i.far.fa-image.fa-2x
+          = file_field_tag :image, class: "main-chat__footer__form-box__input__img-btn--hidden"
+          %span<>
+        = submit_tag "Send", class: "main-chat__footer__form-box__input--send-btn"
