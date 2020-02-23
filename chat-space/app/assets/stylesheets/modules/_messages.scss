@@ -20,6 +20,11 @@ $mainBlackColor: #999999;
 * {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+  color: $sideWhiteColor;
+
+}
 .wrapper{
   display: flex;
 }
@@ -47,8 +52,6 @@ $mainBlackColor: #999999;
         color: $sideWhiteColor;
 
         .fas{
-          text-decoration: none;
-          color: $sideWhiteColor;
           margin-left: 5px;
         }
       }
@@ -58,15 +61,18 @@ $mainBlackColor: #999999;
   &__lists{
     @include h_w(calc(100% - 100px), 100%);
     background-color: #2f3e51;
-    color: $sideWhiteColor;
     padding: 20px 20px 40px;
-    &--chat-title{
-      font-size: 15px;
-      margin-bottom: 5px;
+    &__group {
+      color: $sideWhiteColor;
+      &--name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &--message{
+        font-size: 11px;
+      }
     }
-    &--chat-message{
-      font-size: 11px;
-    }
+    
   }
 }
 
@@ -99,7 +105,6 @@ $mainBlackColor: #999999;
       @include h_w(40px, 72px);
       padding: 0px 20px;
       margin: 28px 40px 0 0;
-      text-decoration: none;
       text-align: center;
       line-height: 40px;
       color: $btnBlueColor;
