@@ -5,15 +5,17 @@
         = current_user.name
       %ul.side-bar__header__content__icon<
         %li.side-bar__header__content__icon--new-group<
-          = link_to "#", class: "side-bar__header__content__icon--new-group" do
+          = link_to new_group_path, class: "side-bar__header__content__icon--new-group" do
             %i.fas.fa-edit
         %li.side-bar__header__content__icon--cog
           = link_to edit_user_path(current_user), class: "side-bar__header__content__icon--cog" do
             %i.fas.fa-cog
             %span<>
-  %ul.side-bar__lists<
-    %li.side-bar__lists--chat-title<
-      techchamp
-    %i.side-bar__lists--chat-message<
-      まだメッセージがありません
-    
+  .side-bar__lists
+    - current_user.groups.each do |group| 
+      = link_to "#" do
+        .side-bar__lists__group
+          .side-bar__lists__group--name
+            = group.name
+          .side-bar__lists__group--message
+            メッセージはまだありません。
