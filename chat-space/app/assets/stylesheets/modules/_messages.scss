@@ -23,7 +23,6 @@ $mainBlackColor: #999999;
 a {
   text-decoration: none;
   color: $sideWhiteColor;
-
 }
 .wrapper{
   display: flex;
@@ -129,6 +128,7 @@ a {
         &--date{
           color: $mainBlackColor;
           font-size: 12px;
+          margin-left: 5px;
         }  
       }
       &__message{
@@ -150,20 +150,22 @@ a {
       form{
         display: flex;
         width: 100%;
+        position: relative;
+
       } 
       &__input{
         @include h_w(100%, 100%);
-        position: relative;
         &--message{
           @include h_w(50px, 100%);
           padding: 0 10px;
           color: $mainBlackColor;
           display: inline-block;
+
         }
         &__img-btn{
-          position: fixed;
-          right: 155px;
-          bottom: 30px;
+          position: absolute;
+          right: 110px;
+          bottom: 10px;
           &--hidden{
             display: none;
           }

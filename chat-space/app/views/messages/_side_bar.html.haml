@@ -13,9 +13,10 @@
             %span<>
   .side-bar__lists
     - current_user.groups.each do |group| 
-      = link_to "#" do
+      = link_to group_messages_path(group) do
         .side-bar__lists__group
           .side-bar__lists__group--name
             = group.name
           .side-bar__lists__group--message
-            メッセージはまだありません。
+            = group.show_last_message
+
