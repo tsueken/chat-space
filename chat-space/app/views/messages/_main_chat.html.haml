@@ -9,7 +9,7 @@
     = link_to edit_group_path(@group), class: "main-chat__header__right" do
       Edit
   
-  .main-chat__contents
+  .main-chat__contents.messages
     = render @messages
   .main-chat__footer
     .main-chat__footer__form-box
@@ -19,4 +19,4 @@
           %i.far.fa-image.fa-2x
           = f.file_field :image, class: "main-chat__footer__form-box__input__img-btn--hidden"
           %span<>
-        = f.submit "Send", class: "main-chat__footer__form-box__input--send-btn"
+        = f.submit "Send", class: "form__submit main-chat__footer__form-box__input--send-btn"
