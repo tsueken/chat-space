@@ -61,6 +61,7 @@ a {
     @include h_w(calc(100% - 100px), 100%);
     background-color: #2f3e51;
     padding: 20px 20px 40px;
+    overflow: scroll;
     &__group {
       color: $sideWhiteColor;
       &--name{
@@ -117,6 +118,7 @@ a {
     background-color: #fafafa;
     padding-top: 35px;
     padding-left: 40px;
+    overflow: scroll;
     &__content{
       &__top{
         display: flex;
