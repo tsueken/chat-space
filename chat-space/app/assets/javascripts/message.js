@@ -58,7 +58,7 @@ $(function(){
       $(".form__submit").prop("disabled", false);
       $('form')[0].reset();
 
-      debugger
+
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
